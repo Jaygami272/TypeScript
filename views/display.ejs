@@ -1,0 +1,32 @@
+<html>
+
+<body style="display: flex;justify-content: center;">
+    <div style="width: 600px;">
+        <table border="1px solid black">
+            <tr>
+                <th style="width:200px">First Name</th>
+                <th style="width: 200px;">Last Name</th>
+                <th style="width: 700px;">File Name</th>
+                <th style="width: 300px;">Created_at</th>
+                <th style="width: 200px;">Action</th>
+            </tr>
+            <% dataarray.forEach(key=> {%>
+                <tr>
+                    <% key.forEach(value=>{%>
+                        <td>
+                            <%=value %>
+                        </td>
+
+                        <%}) %>
+                            <td>
+                                <a href="/delete?id=<%=key[0]%>&filename=<%=filename%>"><button type="button">Delete</button></a>
+                                <a href="/edit?id=<%=key[0]%>&filename=<%=filename%>"><button type="button">Update</button></a>
+                            </td>
+                </tr>
+                <% }); %>
+
+        </table>
+    </div>
+</body>
+
+</html>
